@@ -7,6 +7,7 @@ import {
   inject,
   viewChild,
 } from '@angular/core';
+import { EDUCATION } from '../../data/education';
 import { EXPERIENCE } from '../../data/experience';
 import { Reveal } from '../../shared/reveal.directive';
 import { onScrollFrame } from '../../shared/motion';
@@ -20,6 +21,7 @@ import { onScrollFrame } from '../../shared/motion';
 })
 export class ExperienceSection {
   protected readonly experience = EXPERIENCE;
+  protected readonly education = EDUCATION;
 
   protected hostOf(url: string): string {
     return new URL(url).host;

@@ -24,6 +24,12 @@ export interface Experience {
   highlights: Highlight[];
 }
 
+export interface Education {
+  degree: string;
+  institution: string;
+  year: number;
+}
+
 export interface Tech {
   name: string;
   /** Caminho do ícone em /public. */

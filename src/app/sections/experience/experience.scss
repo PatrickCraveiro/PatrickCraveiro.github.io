@@ -134,13 +134,19 @@
   padding-top: 18px;
 }
 
-// — nota sobre IA —
-.ai-note {
+// — notas: formação e IA —
+.notes {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 20px;
-  align-items: center;
+  gap: 16px;
   margin-top: 72px;
+}
+
+.note {
+  display: grid;
+  // Largura fixa do rótulo para os textos das notas ficarem alinhados entre si.
+  grid-template-columns: 12ch minmax(0, 1fr);
+  gap: 20px;
+  align-items: baseline;
   padding: 28px;
   border: var(--border) solid var(--line);
 
@@ -148,10 +154,23 @@
     font-size: 17px;
     line-height: 28px;
   }
+
+  strong {
+    font-weight: 600;
+  }
+
+  @media (max-width: 560px) {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
 }
 
-.ai-label {
+.note-label {
   font-family: var(--font-mono);
   font-size: 14px;
   color: var(--accent-300);
+}
+
+.note-meta {
+  color: var(--fg-muted);
 }
