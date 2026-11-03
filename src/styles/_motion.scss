@@ -1,0 +1,32 @@
+// Estados de entrada controlados pela diretiva appReveal (src/app/shared/reveal.directive.ts).
+
+[data-reveal] {
+  transition:
+    opacity 900ms var(--ease),
+    transform 900ms var(--ease);
+}
+
+[data-reveal='up']:not(.is-revealed) {
+  opacity: 0;
+  transform: translateY(32px);
+}
+
+[data-reveal='side']:not(.is-revealed) {
+  opacity: 0;
+  transform: translateX(-32px);
+}
+
+[data-reveal='rule'] {
+  transform-origin: 0 50%;
+  transition-duration: 1300ms;
+
+  &:not(.is-revealed) {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes caret-blink {
+  50% {
+    opacity: 0;
+  }
+}
