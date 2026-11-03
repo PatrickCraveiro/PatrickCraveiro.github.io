@@ -18,6 +18,8 @@ export interface Highlight {
 export interface Experience {
   company: string;
   badge: string;
+  /** Site público do trabalho, quando existe. Aparece como link ao lado do nome. */
+  site?: string;
   summary: string;
   highlights: Highlight[];
 }

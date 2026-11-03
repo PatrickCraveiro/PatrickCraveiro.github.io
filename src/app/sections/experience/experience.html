@@ -12,6 +12,9 @@
         <div class="job-head">
           <h3 class="company">{{ job.company }}</h3>
           <span class="tag tag-accent">{{ job.badge }}</span>
+          @if (job.site; as site) {
+            <a class="site-link" [href]="site" target="_blank" rel="noopener">{{ hostOf(site) }} ↗</a>
+          }
         </div>
         <p class="job-summary">{{ job.summary }}</p>
 

@@ -64,6 +64,18 @@
   letter-spacing: -0.02em;
 }
 
+.site-link {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--accent-300);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--paper);
+    text-decoration: underline;
+  }
+}
+
 .job-summary {
   max-width: 60ch;
   margin-top: 12px;

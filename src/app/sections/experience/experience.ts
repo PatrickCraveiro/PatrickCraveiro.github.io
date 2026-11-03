@@ -21,6 +21,10 @@ import { onScrollFrame } from '../../shared/motion';
 export class ExperienceSection {
   protected readonly experience = EXPERIENCE;
 
+  protected hostOf(url: string): string {
+    return new URL(url).host;
+  }
+
   private readonly timeline = viewChild.required<ElementRef<HTMLElement>>('timeline');
   private readonly fill = viewChild.required<ElementRef<HTMLElement>>('fill');
 

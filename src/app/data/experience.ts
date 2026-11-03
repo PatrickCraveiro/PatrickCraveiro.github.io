@@ -68,20 +68,33 @@ export const EXPERIENCE: Experience[] = [
   {
     company: 'Lightfarm Studios',
     badge: 'Freelance',
+    site: 'https://lightfarm.com.br/',
     summary:
-      'Desenvolvimento do site institucional de um estúdio criativo, com conteúdo gerenciado por CMS e componentes próprios.',
+      'Ajudei a construir o site de um estúdio de animação 2D e 3D premiado: front-end em Next.js, conteúdo no Strapi e biblioteca de componentes em Stencil.',
     highlights: [
       {
-        title: 'Busca e filtros de serviços',
+        title: 'Páginas montadas pelo CMS',
         description:
-          'Busca no cabeçalho e filtros de serviços com seleção múltipla, montados a partir do CMS. A ordem dos filtros e dos menus de mercados passou a ser definida pelo próprio admin.',
+          'Cada página é composta no Strapi a partir de módulos (hero, vídeo, grid de mídia, equipe, vagas, prêmios) e o front renderiza cada bloco pelo seu registro. O estúdio publica conteúdo sem depender de desenvolvimento.',
         stack: ['Next.js', 'React', 'Strapi'],
       },
       {
-        title: 'SEO e renderização no servidor',
+        title: 'Portfólio de trabalhos',
         description:
-          'Correção da renderização no servidor e metadados de SEO e Open Graph nas páginas, além de eventos de analytics via Google Tag Manager.',
-        stack: ['Next.js', 'Stencil', 'Google Tag Manager'],
+          'Página de cada trabalho do estúdio com galeria, prêmios e sugestões de outros trabalhos, além de busca e filtros de serviços com seleção múltipla definidos pelo admin.',
+        stack: ['Next.js', 'React', 'TypeScript'],
+      },
+      {
+        title: 'Componentes em Stencil',
+        description:
+          'Biblioteca de Web Components do site, documentada no Storybook: menu, cabeçalho, galerias e modais, com ajustes de layout para mobile.',
+        stack: ['Stencil', 'Web Components', 'Storybook'],
+      },
+      {
+        title: 'SEO e analytics',
+        description:
+          'Renderização no servidor, metadados de SEO e Open Graph em todas as páginas e eventos de analytics via Google Tag Manager.',
+        stack: ['Next.js', 'SSR', 'Google Tag Manager'],
       },
     ],
   },
