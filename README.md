@@ -1,59 +1,81 @@
-# Portfolio
+# Patrick Craveiro — Portfólio
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.5.
+Portfólio pessoal de desenvolvedor Front-End, feito em Angular.
 
-## Development server
+**🔗 [patrickcraveiro.github.io](https://patrickcraveiro.github.io/)**
 
-To start a local development server, run:
+![Prévia do portfólio](docs/preview.png)
 
-```bash
-ng serve
-```
+## Destaques
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- **Angular 22** com componentes standalone, signals, change detection `OnPush` e sem Zone.js.
+- **Conteúdo separado do layout**: perfil, experiência, stack e projetos ficam em arquivos TypeScript tipados em [`src/app/data`](src/app/data).
+- **Animações sem biblioteca**:
+  - diretiva `appReveal`: entrada no scroll com um único `IntersectionObserver` compartilhado;
+  - diretiva `appTilt`: inclinação 3D que segue o cursor;
+  - efeito de digitação, cartão de código 3D e timeline que se preenche com o scroll.
+- **Acessibilidade**: respeita `prefers-reduced-motion`, tem foco visível, link para pular ao conteúdo, contraste AA e textos alternativos para leitores de tela.
+- **Design system** em tokens CSS: a cor de destaque é gerada em OKLCH a partir de uma única variável (`--accent-hue`).
+- **Deploy automático** no GitHub Pages a cada push na `main`.
 
-## Code scaffolding
+## Rodando localmente
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+Requer Node.js 22.22+ ou 24.15+.
 
 ```bash
-ng build
+npm install
+npm start        # http://localhost:4200
+npm run build    # gera dist/portfolio/browser
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Atualizando o conteúdo
 
-## Running unit tests
+Todo o texto do site está em [`src/app/data`](src/app/data):
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+| Arquivo | O que tem |
+| --- | --- |
+| `profile.ts` | Nome, resumo, e-mail, links e as palavras do efeito de digitação |
+| `experience.ts` | Empresas, destaques e tecnologias de cada experiência |
+| `stack.ts` | Grupos de tecnologias (os ícones ficam em `public/icons`) |
+| `projects.ts` | Projetos pessoais, na ordem em que aparecem |
 
-```bash
-ng test
+### Adicionando um GIF ou link de produção a um projeto
+
+1. Coloque o arquivo em `public/projects/` (ex.: `historicar.gif`). Vídeo MP4/WebM costuma ficar bem mais leve que GIF e também é aceito.
+2. Em `projects.ts`, preencha `media` e/ou `liveUrl`:
+
+```ts
+{
+  title: 'Historicar',
+  // ...
+  liveUrl: 'https://historicar.vercel.app',
+  media: {
+    src: 'projects/historicar.gif',
+    alt: 'Painel do Historicar com a linha do tempo de manutenções',
+    // type: 'video',  // para .mp4/.webm
+    // fit: 'contain', // para mostrar a mídia inteira em vez de preencher o card
+  },
+},
 ```
 
-## Running end-to-end tests
+Sem `media`, o card mostra um placeholder numerado. Com `liveUrl`, aparece o botão "Ver online".
 
-For end-to-end (e2e) testing, run:
+### Trocando a cor de destaque
 
-```bash
-ng e2e
+Em [`src/styles/_tokens.scss`](src/styles/_tokens.scss), altere `--accent-hue`: `292` é roxo, `255` azul e `215` ciano. Toda a rampa de tons é recalculada a partir dela.
+
+## Estrutura
+
+```
+src/
+├── app/
+│   ├── data/         # conteúdo tipado (perfil, experiência, stack, projetos)
+│   ├── layout/       # header, rodapé e barra de progresso
+│   ├── sections/     # hero, experiência, stack, projetos e contato
+│   └── shared/       # diretivas de animação e utilitários de movimento
+└── styles/           # tokens, base, componentes e estados de animação
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Créditos
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Layout criado no Claude Design a partir do design system "Modernist", adaptado para tema escuro. Ícones de tecnologias: [Simple Icons](https://simpleicons.org/).
