@@ -17,8 +17,8 @@ export class App {
   constructor() {
     // Links diretos como /#projetos: o navegador tenta rolar antes de a seção existir.
     afterNextRender(() => {
-      const target = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
-      target?.scrollIntoView({ behavior: 'instant' });
+      const id = decodeURIComponent(location.hash.slice(1));
+      if (id) document.getElementById(id)?.scrollIntoView({ behavior: 'instant' });
     });
   }
 }
