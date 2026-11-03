@@ -1,0 +1,39 @@
+@let p = project();
+
+<article class="card">
+  <div class="media" [class.contain]="p.media?.fit === 'contain'">
+    @if (p.media; as media) {
+      @if (media.type === 'video') {
+        <video [src]="media.src" [attr.aria-label]="media.alt" autoplay loop muted [muted]="true" playsinline preload="metadata"></video>
+      } @else {
+        <img [src]="media.src" [alt]="media.alt" loading="lazy" decoding="async" />
+      }
+    } @else {
+      <div class="placeholder" aria-hidden="true">
+        <span class="placeholder-number">{{ number() }}</span>
+        <span class="placeholder-label">preview em breve</span>
+      </div>
+    }
+  </div>
+
+  <div class="body">
+    <div class="title-row">
+      <h3 class="title">
+        <a class="cover-link" [href]="p.repoUrl" target="_blank" rel="noopener" [attr.aria-label]="p.title + ' — ver código no GitHub'">{{ p.title }}</a>
+      </h3>
+      <span class="number">{{ number() }}</span>
+    </div>
+
+    <p class="description">{{ p.description }}</p>
+
+    <div class="footer">
+      <span class="mono-meta">{{ p.stack.join(' · ') }}</span>
+      <div class="actions">
+        @if (p.liveUrl; as live) {
+          <a class="live-link" [href]="live" target="_blank" rel="noopener" [attr.aria-label]="p.title + ' — ver online'">Ver online ↗</a>
+        }
+        <span class="code-link" aria-hidden="true">Ver código ↗</span>
+      </div>
+    </div>
+  </div>
+</article>

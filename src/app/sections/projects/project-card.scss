@@ -1,0 +1,184 @@
+// O host é o elemento inclinado pela diretiva appTilt do wrapper.
+:host {
+  display: block;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 400ms var(--ease);
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: var(--border) solid var(--line);
+  background: var(--surface);
+  transform-style: preserve-3d;
+  transition: border-color 300ms var(--ease);
+
+  &:hover,
+  &:focus-within {
+    border-color: var(--accent);
+  }
+}
+
+// — mídia: em preto e branco, ganha cor no hover —
+.media {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--surface-raised);
+  border-bottom: var(--border) solid var(--line);
+
+  img,
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    filter: grayscale(1) contrast(1.08);
+    transition:
+      filter 500ms var(--ease),
+      transform 700ms var(--ease);
+  }
+
+  &.contain {
+    padding: 20px;
+
+    img,
+    video {
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+
+  .card:hover &,
+  .card:focus-within & {
+    img,
+    video {
+      filter: none;
+      transform: scale(1.03);
+    }
+  }
+}
+
+.placeholder {
+  --cell: color-mix(in srgb, var(--paper) 6%, transparent);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 24px;
+  background-image:
+    linear-gradient(var(--cell) 1px, transparent 1px),
+    linear-gradient(90deg, var(--cell) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.placeholder-number {
+  font-family: var(--font-heading);
+  font-weight: var(--font-heading-weight);
+  font-size: clamp(72px, 9vw, 120px);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  color: color-mix(in srgb, var(--paper) 10%, transparent);
+  transition: color 400ms var(--ease);
+
+  .card:hover & {
+    color: color-mix(in srgb, var(--accent) 60%, transparent);
+  }
+}
+
+.placeholder-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--fg-soft);
+}
+
+// — conteúdo —
+.body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px 24px 26px;
+  transform: translateZ(30px);
+}
+
+.title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.title {
+  font-size: 28px;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+
+// O link do título cobre o card inteiro; o "Ver online" fica acima dele.
+.cover-link {
+  text-decoration: none;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+
+  &:hover {
+    color: var(--fg);
+  }
+
+  &:focus-visible {
+    outline: none;
+
+    &::after {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+    }
+  }
+}
+
+.number {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--accent-300);
+}
+
+.description {
+  flex: 1;
+  font-size: 15.5px;
+  line-height: 26px;
+  color: color-mix(in srgb, var(--paper) 70%, transparent);
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.actions {
+  display: flex;
+  gap: 20px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.live-link {
+  position: relative;
+  z-index: 1;
+  color: var(--accent-300);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--paper);
+    text-decoration: underline;
+  }
+}
