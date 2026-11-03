@@ -45,3 +45,7 @@ Thumbs.db
 
 # Export original do Claude Design (referência local, não versionado)
 /Portfólio de programador/
+
+# Gravações brutas usadas para gerar os vídeos de public/projects
+/*.mp4
+/gravacoes/

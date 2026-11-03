@@ -14,8 +14,10 @@ export const PROJECTS: Project[] = [
     stack: ['Electron', 'React', 'TypeScript'],
     repoUrl: 'https://github.com/PatrickCraveiro/Emulador',
     media: {
-      src: 'projects/emulador.png',
-      alt: 'Tela do Emulador: console de tela dupla com a capa do jogo em cima e a lista de jogos embaixo',
+      type: 'video',
+      src: 'projects/emulador.mp4',
+      poster: 'projects/emulador.jpg',
+      alt: 'Emulador em uso: navegando entre plataformas e jogos, com a capa animada de cada jogo na tela de cima',
       fit: 'contain',
     },
   },
@@ -25,6 +27,12 @@ export const PROJECTS: Project[] = [
       'Sobrevivência cooperativa em primeira pessoa: zumbis em ondas cada vez mais difíceis, pontos por acerto e armas compradas na parede. Lobby e fases são montados por código.',
     stack: ['Luau', 'Roblox', 'Rojo'],
     repoUrl: 'https://github.com/PatrickCraveiro/roblox-zombie',
+    media: {
+      type: 'video',
+      src: 'projects/roblox-zombies.mp4',
+      poster: 'projects/roblox-zombies.jpg',
+      alt: 'Partida no supermercado: o jogador atira em zumbis, ganha pontos e conclui a rodada',
+    },
   },
   {
     title: 'Historicar',
@@ -33,6 +41,12 @@ export const PROJECTS: Project[] = [
     stack: ['Next.js', 'MongoDB', 'TypeScript'],
     repoUrl: 'https://github.com/PatrickCraveiro/historicar',
     liveUrl: 'https://historicar.vercel.app',
+    media: {
+      type: 'video',
+      src: 'projects/historicar.mp4',
+      poster: 'projects/historicar.jpg',
+      alt: 'Painel do Historicar: cadastro de um veículo, registro de um serviço e geração do adesivo com QR code',
+    },
   },
   {
     title: 'TCC',
