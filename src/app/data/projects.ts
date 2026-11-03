@@ -54,5 +54,11 @@ export const PROJECTS: Project[] = [
       'Trabalho de conclusão do curso de Ciência da Computação sobre arquiteturas de software, com foco no padrão MVC: uma API em Node.js e um front-end separado.',
     stack: ['JavaScript', 'Node.js'],
     repoUrl: 'https://github.com/PatrickCraveiro/TCC',
+        media: {
+      type: 'video',
+      src: 'projects/tcc.mp4',
+      poster: 'projects/tcc.png',
+      alt: 'Painel do TCC: demonstração da API e do front-end',
+    },
   },
 ];
