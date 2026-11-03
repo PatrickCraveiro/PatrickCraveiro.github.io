@@ -4,6 +4,7 @@ export const EXPERIENCE: Experience[] = [
   {
     company: 'Medgrupo',
     badge: 'Atual · 8 anos',
+    site: 'https://medycorp.com.br/inscricao-medgrupo/medcurso-e-med/inicio',
     summary:
       'Desenvolvedor Front-End na jornada de inscrição e venda dos cursos: do site em que o aluno se matricula ao painel em que a equipe comercial configura tudo sem depender de desenvolvimento. Também atuo no back-end, com APIs em Node.js.',
     highlights: [
@@ -36,6 +37,7 @@ export const EXPERIENCE: Experience[] = [
   {
     company: 'Unhide School',
     badge: 'Atual · 2 anos',
+    site: 'https://unhideschool.com/',
     summary:
       'Desenvolvedor Front-End em uma plataforma de cursos de arte digital: área do aluno, área para empresas, biblioteca de componentes e checkout.',
     highlights: [
