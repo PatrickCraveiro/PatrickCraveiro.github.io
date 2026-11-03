@@ -1,0 +1,36 @@
+<section id="experiencia" class="section" aria-labelledby="experiencia-titulo">
+  <p class="eyebrow" appReveal>01 — experiência</p>
+  <h2 id="experiencia-titulo" class="section-title title" appReveal>Onde eu construo hoje.</h2>
+
+  <div class="timeline" #timeline>
+    <div class="track" aria-hidden="true"></div>
+    <div class="fill" aria-hidden="true" #fill></div>
+
+    @for (job of experience; track job.company) {
+      <article class="job" appReveal="side">
+        <span class="node" aria-hidden="true"></span>
+        <div class="job-head">
+          <h3 class="company">{{ job.company }}</h3>
+          <span class="tag tag-accent">{{ job.badge }}</span>
+        </div>
+        <p class="job-summary">{{ job.summary }}</p>
+
+        <ul class="highlights">
+          @for (item of job.highlights; track item.title) {
+            <li class="highlight">
+              <h4 class="highlight-title">{{ item.title }}</h4>
+              <p class="highlight-text">{{ item.description }}</p>
+            </li>
+          }
+        </ul>
+
+        <p class="mono-meta job-stack">{{ job.stack.join(' · ') }}</p>
+      </article>
+    }
+  </div>
+
+  <aside class="ai-note" appReveal>
+    <span class="ai-label">// ia</span>
+    <p>Uso IA no dia a dia, como o Claude Code, para entregar mais rápido mantendo o código organizado e fácil de manter.</p>
+  </aside>
+</section>

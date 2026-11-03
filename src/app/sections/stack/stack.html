@@ -1,0 +1,20 @@
+<section id="stack" class="section" aria-labelledby="stack-titulo">
+  <p class="eyebrow" appReveal>02 — stack</p>
+  <h2 id="stack-titulo" class="section-title" appReveal>Ferramentas do dia a dia.</h2>
+
+  @for (group of groups; track group.label) {
+    <div class="group">
+      <h3 class="group-label" appReveal>{{ group.label }}</h3>
+      <ul class="items">
+        @for (tech of group.items; track tech.name) {
+          <li appReveal appTilt [perspective]="600">
+            <div class="chip">
+              <img [src]="tech.icon" alt="" width="32" height="32" loading="lazy" />
+              <span>{{ tech.name }}</span>
+            </div>
+          </li>
+        }
+      </ul>
+    </div>
+  }
+</section>

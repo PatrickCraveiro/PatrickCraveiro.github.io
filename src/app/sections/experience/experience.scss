@@ -1,0 +1,133 @@
+:host {
+  display: block;
+}
+
+.title {
+  max-width: 18ch;
+  margin-bottom: 64px;
+}
+
+// — timeline —
+.timeline {
+  --rail: clamp(28px, 4vw, 56px);
+
+  position: relative;
+  padding-left: var(--rail);
+}
+
+.track,
+.fill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 4px;
+  width: var(--border);
+}
+
+.track {
+  background: color-mix(in srgb, var(--paper) 14%, transparent);
+}
+
+.fill {
+  background: var(--accent);
+  transform-origin: 50% 0;
+  transform: scaleY(0);
+}
+
+.job {
+  position: relative;
+
+  & + & {
+    margin-top: 72px;
+  }
+}
+
+.node {
+  position: absolute;
+  top: 10px;
+  left: calc(-1 * var(--rail));
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+}
+
+.job-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 12px 20px;
+}
+
+.company {
+  font-size: clamp(28px, 3.2vw, 44px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.job-summary {
+  max-width: 60ch;
+  margin-top: 12px;
+  font-size: 17px;
+  line-height: 28px;
+  color: var(--fg-muted);
+}
+
+// Células separadas por linhas de 2px: o gap revela o fundo da grade.
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: var(--border);
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+  background: var(--line);
+  border: var(--border) solid var(--line);
+}
+
+.highlight {
+  padding: 24px;
+  background: var(--page);
+  transition: background-color 300ms var(--ease);
+
+  &:hover {
+    background: var(--surface-hover);
+  }
+}
+
+.highlight-title {
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+.highlight-text {
+  margin-top: 10px;
+  font-size: 15.5px;
+  line-height: 26px;
+  color: color-mix(in srgb, var(--paper) 70%, transparent);
+}
+
+.job-stack {
+  margin-top: 18px;
+}
+
+// — nota sobre IA —
+.ai-note {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 20px;
+  align-items: center;
+  margin-top: 72px;
+  padding: 28px;
+  border: var(--border) solid var(--line);
+
+  p {
+    font-size: 17px;
+    line-height: 28px;
+  }
+}
+
+.ai-label {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--accent-300);
+}
