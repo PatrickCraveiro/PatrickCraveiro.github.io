@@ -1,0 +1,220 @@
+<!doctype html>
+<!--
+  Banner do LinkedIn (1584×396), no visual do portfólio.
+  O canto inferior esquerdo fica livre: é onde a foto de perfil cobre o banner.
+  Para regerar o PNG (em 2x e reduzido depois, para ficar nítido):
+    chrome --headless=new --window-size=1584,396 --force-device-scale-factor=2 --screenshot=banner@2x.png banner.html
+-->
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&display=block">
+<style>
+  :root {
+    --ink: #201e1d;
+    --paper: #f3f2f2;
+    --hue: 292;
+    --accent: oklch(0.62 0.2 var(--hue));
+    --accent-300: oklch(0.8 0.11 var(--hue));
+    --mono: ui-monospace, 'Cascadia Code', Consolas, monospace;
+    --line: color-mix(in srgb, var(--paper) 7%, transparent);
+  }
+
+  * { box-sizing: border-box; margin: 0; }
+
+  html, body {
+    width: 1584px;
+    height: 396px;
+    overflow: hidden;
+    background: var(--ink);
+  }
+
+  body {
+    position: relative;
+    font-family: 'Archivo', system-ui, sans-serif;
+    color: var(--paper);
+  }
+
+  .grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: radial-gradient(ellipse 55% 95% at 70% 45%, #000 20%, transparent 78%);
+  }
+
+  .glow {
+    position: absolute;
+    right: 40px;
+    top: -260px;
+    width: 760px;
+    height: 760px;
+    background: radial-gradient(circle, color-mix(in srgb, var(--accent) 20%, transparent), transparent 62%);
+  }
+
+  .brand {
+    position: absolute;
+    left: 56px;
+    top: 44px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 800;
+    font-size: 22px;
+  }
+
+  .brand i {
+    width: 12px;
+    height: 12px;
+    background: var(--accent);
+  }
+
+  .text {
+    position: absolute;
+    left: 470px;
+    top: 46px;
+    width: 660px;
+  }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 23px;
+    color: var(--accent-300);
+    margin-bottom: 16px;
+  }
+
+  h1 {
+    font-weight: 800;
+    font-size: 54px;
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    margin-left: -0.05em;
+  }
+
+  h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .meta {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 28px;
+    font-family: var(--mono);
+    font-size: 23px;
+    color: color-mix(in srgb, var(--paper) 68%, transparent);
+  }
+
+  .url {
+    white-space: nowrap;
+    padding: 10px 16px;
+    background: oklch(0.54 0.19 var(--hue));
+    color: var(--paper);
+    font-family: 'Archivo', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+  }
+
+  /* — cartão de código 3D, como no hero do site — */
+  .stage {
+    position: absolute;
+    left: 1150px;
+    top: 58px;
+    width: 380px;
+    perspective: 1200px;
+  }
+
+  .card {
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateY(-16deg) rotateX(8deg);
+  }
+
+  .depth-far,
+  .depth-near {
+    position: absolute;
+    inset: 0;
+  }
+
+  .depth-far {
+    border: 2px solid var(--accent);
+    transform: translateZ(-80px) translate(22px, 22px);
+  }
+
+  .depth-near {
+    background: color-mix(in srgb, var(--accent) 14%, transparent);
+    transform: translateZ(-40px) translate(11px, 11px);
+  }
+
+  .window {
+    position: relative;
+    background: color-mix(in srgb, var(--ink) 92%, var(--paper));
+    border: 2px solid color-mix(in srgb, var(--paper) 16%, transparent);
+    box-shadow: 0 12px 32px rgb(0 0 0 / 0.4);
+  }
+
+  .titlebar {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 10px 14px;
+    border-bottom: 2px solid color-mix(in srgb, var(--paper) 12%, transparent);
+    font-family: var(--mono);
+    font-size: 12px;
+    color: color-mix(in srgb, var(--paper) 60%, transparent);
+  }
+
+  .titlebar b {
+    width: 9px;
+    height: 9px;
+    background: color-mix(in srgb, var(--paper) 30%, transparent);
+  }
+
+  .titlebar b:first-child { background: var(--accent); }
+  .titlebar span { margin-left: 10px; }
+
+  pre {
+    padding: 16px 18px 20px;
+    font-family: var(--mono);
+    font-size: 15px;
+    line-height: 1.85;
+  }
+
+  .k { color: var(--accent); }
+  .s { color: var(--accent-300); }
+</style>
+</head>
+<body>
+  <div class="grid"></div>
+  <div class="glow"></div>
+
+  <div class="brand"><i></i>patrick.craveiro</div>
+
+  <div class="text">
+    <p class="eyebrow">&gt; desenvolvedor front-end · 8+ anos</p>
+    <h1>Ferramentas que dão <em>autonomia</em><br>a quem não é técnico.</h1>
+    <div class="meta">
+      <span class="url">patrickcraveiro.github.io ↗</span>
+    </div>
+  </div>
+
+  <div class="stage">
+    <div class="card">
+      <div class="depth-far"></div>
+      <div class="depth-near"></div>
+      <div class="window">
+        <div class="titlebar"><b></b><b></b><b></b><span>patrick.ts</span></div>
+<pre><span class="k">const</span> patrick = {
+  foco: [<span class="s">"Angular"</span>, <span class="s">"TypeScript"</span>],
+  tambem: [<span class="s">"Node.js"</span>, <span class="s">"GraphQL"</span>],
+  experiencia: <span class="s">"8+ anos"</span>,
+  missao: <span class="s">"autonomia"</span>,
+};</pre>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
