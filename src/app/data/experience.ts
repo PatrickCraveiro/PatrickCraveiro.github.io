@@ -3,7 +3,7 @@ import { Experience } from './models';
 export const EXPERIENCE: Experience[] = [
   {
     company: 'Medgrupo',
-    badge: 'Atual',
+    badge: 'Atual · 8 anos',
     summary:
       'Desenvolvedor Front-End na jornada de inscrição e venda dos cursos: do site em que o aluno se matricula ao painel em que a equipe comercial configura tudo sem depender de desenvolvimento. Também atuo no back-end, com APIs em Node.js.',
     highlights: [
@@ -62,6 +62,26 @@ export const EXPERIENCE: Experience[] = [
         description:
           'Microsite de pagamento em que implementei o Pix com tela de confirmação, campanhas com vários cupons ativos ao mesmo tempo (como a Black Friday), regras de parcelamento e eventos de analytics.',
         stack: ['Angular', 'GraphQL'],
+      },
+    ],
+  },
+  {
+    company: 'Lightfarm Studios',
+    badge: 'Freelance',
+    summary:
+      'Desenvolvimento do site institucional de um estúdio criativo, com conteúdo gerenciado por CMS e componentes próprios.',
+    highlights: [
+      {
+        title: 'Busca e filtros de serviços',
+        description:
+          'Busca no cabeçalho e filtros de serviços com seleção múltipla, montados a partir do CMS. A ordem dos filtros e dos menus de mercados passou a ser definida pelo próprio admin.',
+        stack: ['Next.js', 'React', 'Strapi'],
+      },
+      {
+        title: 'SEO e renderização no servidor',
+        description:
+          'Correção da renderização no servidor e metadados de SEO e Open Graph nas páginas, além de eventos de analytics via Google Tag Manager.',
+        stack: ['Next.js', 'Stencil', 'Google Tag Manager'],
       },
     ],
   },

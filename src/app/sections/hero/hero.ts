@@ -25,8 +25,9 @@ export class Hero {
   protected readonly typed = signal(PROFILE.roles[0]);
   protected readonly code = objectLiteral('patrick', {
     cargo: 'Front-End Developer',
-    experiencia: '7+ anos',
+    experiencia: '8+ anos',
     empresas: ['Medgrupo', 'Unhide School'],
+    freela: ['Lightfarm Studios'],
     foco: ['Angular', 'TypeScript'],
     tambem: ['Node.js', 'GraphQL'],
     missao: 'autonomia para não-técnicos',
