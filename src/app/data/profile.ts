@@ -8,5 +8,5 @@ export const PROFILE: Profile = {
     'Há mais de 8 anos construo ferramentas que dão autonomia a quem não é técnico. Graduado em Ciência da Computação.',
   email: 'bill_hotel@hotmail.com',
   github: 'https://github.com/PatrickCraveiro',
-  linkedin: 'https://www.linkedin.com/in/patrick-mateus-564b90169/',
+  linkedin: 'https://www.linkedin.com/in/patrick-craveiro-564b90169/',
 };
