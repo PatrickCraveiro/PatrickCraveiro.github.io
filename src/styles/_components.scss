@@ -1,0 +1,106 @@
+// Classes compartilhadas do design system: layout, tipografia de seção, botões e tags.
+
+.container {
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section {
+  padding-block: var(--section-y);
+}
+
+.rule {
+  height: var(--border);
+  background: color-mix(in srgb, var(--paper) 14%, transparent);
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  margin: 0 0 16px;
+  color: var(--accent-300);
+}
+
+.section-title {
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  // Compensa o respiro lateral da fonte para alinhar opticamente à esquerda.
+  margin: 0 0 56px -0.058em;
+}
+
+.mono-meta {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--fg-soft);
+}
+
+// — botões —
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-weight: var(--font-heading-weight);
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--fg);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  padding: var(--space-2) calc(var(--space-3) * 1.2);
+  transition:
+    background-color 200ms var(--ease),
+    border-color 200ms var(--ease),
+    color 200ms var(--ease);
+
+  &:hover {
+    color: var(--fg);
+  }
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--paper);
+
+  &:hover {
+    background: var(--accent-600);
+    color: var(--paper);
+  }
+
+  &:active {
+    background: var(--accent-700);
+  }
+}
+
+.btn-outline {
+  border-color: color-mix(in srgb, var(--paper) 40%, transparent);
+
+  &:hover {
+    background: color-mix(in srgb, var(--paper) 8%, transparent);
+    border-color: var(--paper);
+  }
+
+  &:active {
+    background: color-mix(in srgb, var(--paper) 14%, transparent);
+  }
+}
+
+// — tags —
+.tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  padding: 3px 10px;
+  border-radius: var(--radius);
+}
+
+.tag-accent {
+  background: var(--accent-100);
+  color: var(--accent-800);
+}

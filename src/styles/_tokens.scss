@@ -1,0 +1,54 @@
+// Tokens do design system "Modernist" (Claude Design), adaptados ao tema escuro do portfólio.
+// Para trocar a cor de destaque basta mudar --accent-hue (292 roxo · 255 azul · 215 ciano).
+
+:root {
+  --ink: #201e1d;
+  --paper: #f3f2f2;
+
+  --accent-hue: 292;
+  --accent: oklch(0.62 0.2 var(--accent-hue));
+  --accent-100: oklch(0.95 0.025 var(--accent-hue));
+  --accent-200: oklch(0.89 0.06 var(--accent-hue));
+  --accent-300: oklch(0.8 0.11 var(--accent-hue));
+  --accent-400: oklch(0.71 0.16 var(--accent-hue));
+  --accent-500: var(--accent);
+  --accent-600: oklch(0.54 0.19 var(--accent-hue));
+  --accent-700: oklch(0.46 0.16 var(--accent-hue));
+  --accent-800: oklch(0.38 0.12 var(--accent-hue));
+  --accent-900: oklch(0.3 0.09 var(--accent-hue));
+
+  // Papéis semânticos: texto claro sobre fundo escuro.
+  --page: var(--ink);
+  --fg: var(--paper);
+  --fg-muted: color-mix(in srgb, var(--paper) 72%, transparent);
+  --fg-soft: color-mix(in srgb, var(--paper) 60%, transparent);
+  --line: color-mix(in srgb, var(--paper) 12%, transparent);
+  --line-strong: color-mix(in srgb, var(--paper) 16%, transparent);
+  --surface: color-mix(in srgb, var(--paper) 3%, var(--ink));
+  --surface-hover: color-mix(in srgb, var(--paper) 5%, var(--ink));
+  --surface-raised: color-mix(in srgb, var(--paper) 8%, var(--ink));
+
+  --font-heading: 'Archivo', system-ui, sans-serif;
+  --font-heading-weight: 800;
+  --font-body: 'Archivo', system-ui, sans-serif;
+  --font-mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  --radius: 0px;
+  --border: 2px;
+
+  --shadow-lg: 0 12px 32px color-mix(in srgb, #000 40%, transparent);
+
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  --container: 1200px;
+  --gutter: clamp(20px, 5vw, 72px);
+  --section-y: clamp(72px, 10vw, 120px);
+  --header-h: 72px;
+}
