@@ -41,6 +41,8 @@ export interface ProjectMedia {
   alt: string;
   /** 'image' cobre PNG, JPG, WebP e GIF; 'video' para MP4/WebM (mais leve que GIF). */
   type?: 'image' | 'video';
+  /** Imagem exibida antes do vídeo carregar (e no lugar dele com movimento reduzido). */
+  poster?: string;
   /** 'cover' preenche o card (padrão); 'contain' mostra a mídia inteira. */
   fit?: 'cover' | 'contain';
 }

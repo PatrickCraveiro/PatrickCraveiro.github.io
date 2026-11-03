@@ -4,7 +4,7 @@
   <div class="media" [class.contain]="p.media?.fit === 'contain'">
     @if (p.media; as media) {
       @if (media.type === 'video') {
-        <video [src]="media.src" [attr.aria-label]="media.alt" autoplay loop muted [muted]="true" playsinline preload="metadata"></video>
+        <video appAutoplayInView [src]="media.src" [attr.poster]="media.poster" [attr.aria-label]="media.alt" loop muted playsinline preload="none"></video>
       } @else {
         <img [src]="media.src" [alt]="media.alt" loading="lazy" decoding="async" />
       }
