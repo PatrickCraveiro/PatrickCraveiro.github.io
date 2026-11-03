@@ -1,0 +1,33 @@
+<div class="grid-bg" aria-hidden="true"></div>
+
+<div class="container layout">
+  <div>
+    <p class="hello" appReveal>&gt; olá, eu sou</p>
+    <h1 class="name" appReveal [revealDelay]="80">{{ profile.name }}</h1>
+    <p class="role" appReveal [revealDelay]="160">
+      <span class="visually-hidden">Desenvolvedor {{ profile.roles[0] }}</span>
+      <span aria-hidden="true">Desenvolvedor <span class="typed">{{ typed() }}</span><span class="caret"></span></span>
+    </p>
+    <p class="summary" appReveal [revealDelay]="240">{{ profile.summary }}</p>
+    <div class="actions" appReveal [revealDelay]="320">
+      <a href="#projetos" class="btn btn-primary">Ver projetos ↓</a>
+      <a [href]="profile.github" target="_blank" rel="noopener" class="btn btn-outline">GitHub ↗</a>
+    </div>
+  </div>
+
+  <div class="stage" appReveal [revealDelay]="200" aria-hidden="true">
+    <div class="card3d" #card>
+      <div class="depth depth-far"></div>
+      <div class="depth depth-near"></div>
+      <div class="window">
+        <div class="titlebar">
+          <span class="dot dot-accent"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="filename">patrick.ts</span>
+        </div>
+        <pre class="code"><code>@for (line of code; track $index) {<span class="line" [style.--i]="$index">@for (token of line; track $index) {<span [class]="token.kind">{{ token.text }}</span>}</span>}</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
