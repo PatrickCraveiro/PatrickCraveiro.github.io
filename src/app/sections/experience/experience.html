@@ -20,11 +20,10 @@
             <li class="highlight">
               <h4 class="highlight-title">{{ item.title }}</h4>
               <p class="highlight-text">{{ item.description }}</p>
+              <p class="mono-meta highlight-stack">{{ item.stack.join(' · ') }}</p>
             </li>
           }
         </ul>
-
-        <p class="mono-meta job-stack">{{ job.stack.join(' · ') }}</p>
       </article>
     }
   </div>

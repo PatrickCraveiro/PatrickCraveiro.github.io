@@ -75,22 +75,32 @@
 // Células separadas por linhas de 2px: o gap revela o fundo da grade.
 .highlights {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   gap: var(--border);
   margin: 28px 0 0;
   padding: 0;
   list-style: none;
   background: var(--line);
   border: var(--border) solid var(--line);
+
+  @media (min-width: 760px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .highlight {
+  display: flex;
+  flex-direction: column;
   padding: 24px;
   background: var(--page);
   transition: background-color 300ms var(--ease);
 
   &:hover {
     background: var(--surface-hover);
+  }
+
+  // Um item sobrando na última linha ocupa a largura toda, sem deixar célula vazia.
+  &:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
   }
 }
 
@@ -106,8 +116,10 @@
   color: color-mix(in srgb, var(--paper) 70%, transparent);
 }
 
-.job-stack {
-  margin-top: 18px;
+// Fica no pé da célula para alinhar entre cards da mesma linha.
+.highlight-stack {
+  margin-top: auto;
+  padding-top: 18px;
 }
 
 // — nota sobre IA —

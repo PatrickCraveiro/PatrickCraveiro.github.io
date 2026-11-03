@@ -12,6 +12,7 @@ export interface Profile {
 export interface Highlight {
   title: string;
   description: string;
+  stack: string[];
 }
 
 export interface Experience {
@@ -19,7 +20,6 @@ export interface Experience {
   badge: string;
   summary: string;
   highlights: Highlight[];
-  stack: string[];
 }
 
 export interface Tech {
