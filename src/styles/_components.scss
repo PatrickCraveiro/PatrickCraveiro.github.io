@@ -63,17 +63,18 @@
   }
 }
 
+// Usa o passo 600 da rampa: texto claro sobre --accent ficaria abaixo do contraste AA (4.5:1).
 .btn-primary {
-  background: var(--accent);
+  background: var(--accent-600);
   color: var(--paper);
 
   &:hover {
-    background: var(--accent-600);
+    background: var(--accent-700);
     color: var(--paper);
   }
 
   &:active {
-    background: var(--accent-700);
+    background: var(--accent-800);
   }
 }
 
