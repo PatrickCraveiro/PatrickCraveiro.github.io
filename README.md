@@ -1,6 +1,6 @@
 # Patrick Craveiro — Portfólio
 
-Portfólio pessoal de desenvolvedor Front-End, feito em Angular.
+Portfólio pessoal de desenvolvedor Full Stack, feito em Angular.
 
 **🔗 [patrickcraveiro.github.io](https://patrickcraveiro.github.io/)**
 

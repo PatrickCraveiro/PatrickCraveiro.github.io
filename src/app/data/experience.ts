@@ -6,7 +6,7 @@ export const EXPERIENCE: Experience[] = [
     badge: 'Atual · 8 anos',
     site: 'https://medycorp.com.br/inscricao-medgrupo/medcurso-e-med/inicio',
     summary:
-      'Desenvolvedor Front-End na jornada de inscrição e venda dos cursos: do site em que o aluno se matricula ao painel em que a equipe comercial configura tudo sem depender de desenvolvimento. Também atuo no back-end, com APIs em Node.js.',
+      'Atuo do front ao back-end na jornada de inscrição e venda dos cursos: do site em que o aluno se matricula ao painel em que a equipe comercial configura tudo sem depender de desenvolvimento, passando pelas APIs em Node.js por trás deles.',
     highlights: [
       {
         title: 'Site de inscrição e compra',

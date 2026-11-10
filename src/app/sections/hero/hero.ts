@@ -24,12 +24,12 @@ export class Hero {
   protected readonly profile = PROFILE;
   protected readonly typed = signal(PROFILE.roles[0]);
   protected readonly code = objectLiteral('patrick', {
-    cargo: 'Front-End Developer',
+    cargo: 'Full Stack Developer',
     experiencia: '8+ anos',
     empresas: ['Medgrupo', 'Unhide School'],
     freela: ['Lightfarm Studios'],
-    foco: ['Angular', 'TypeScript'],
-    tambem: ['Node.js', 'GraphQL'],
+    front: ['Angular', 'TypeScript'],
+    back: ['Node.js', 'GraphQL', 'MongoDB'],
     missao: 'autonomia para não-técnicos',
   });
 
