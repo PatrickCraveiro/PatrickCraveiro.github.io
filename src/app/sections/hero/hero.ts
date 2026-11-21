@@ -29,7 +29,7 @@ export class Hero {
     empresas: ['Medgrupo', 'Unhide School'],
     freela: ['Lightfarm Studios'],
     front: ['Angular', 'TypeScript'],
-    back: ['Node.js', 'GraphQL', 'MongoDB'],
+    back: ['Node.js', 'C#', '.NET', 'GraphQL', 'MongoDB'],
     missao: 'autonomia para não-técnicos',
   });
 

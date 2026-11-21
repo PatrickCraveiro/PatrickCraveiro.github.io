@@ -20,7 +20,7 @@ export const STACK: StackGroup[] = [
     label: 'Back-end',
     items: [
       tech('Node.js', 'nodedotjs'),
-      tech('C#', 'dotnet'),
+      tech('C#', 'csharp'),
       tech('.NET', 'dotnet'),
       tech('MongoDB', 'mongodb'),
       tech('GraphQL', 'graphql'),
